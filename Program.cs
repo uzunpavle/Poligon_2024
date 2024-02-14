@@ -22,6 +22,7 @@ namespace Poligon_2024
             */
 
             //napisi jos neku poruku dobrodoslice
+            /*
             int akcija = 1;
             while (akcija != 0)
             {
@@ -38,6 +39,17 @@ namespace Poligon_2024
                     }
                 }
             }
+            */
+            Tacka a = new Tacka(2, -1);
+            Tacka b = new Tacka(5.866, 6.5);
+            Tacka c = new Tacka(2, 0);
+            Tacka d = new Tacka(5, 6);
+
+            Vektor prvi = new Vektor(c, a);
+            Vektor drugi = new Vektor(d, b);
+
+            double ugao = Vektor.Ugao(prvi, drugi);
+            Console.WriteLine("ugao je:" + ugao.ToString());
         }
     }
 }

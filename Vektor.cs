@@ -16,7 +16,7 @@ namespace Poligon_2024
             this.pocetak= pocetak;
             this.kraj= kraj;
         }
-        public static Tacka Vektor_c(Vektor a)  //stavlja vektor u kordinatni pocetak
+        public static Tacka Vektor_Centriraj(Vektor a)  //stavlja vektor u kordinatni pocetak
         {
             Tacka nova = new Tacka();
             nova.x = a.kraj.x - a.pocetak.x;
@@ -25,10 +25,28 @@ namespace Poligon_2024
         }
         public static double Skalarni(Vektor a, Vektor b) //skalarni proizvod dva vekora iz pocetka
         {
-            Tacka a_c = Vektor_c(a);
-            Tacka b_c = Vektor_c(b);
+            Tacka a_c = Vektor_Centriraj(a);
+            Tacka b_c = Vektor_Centriraj(b);
             double skalarni = a_c.x * b_c.x + a_c.y * b_c.y; 
             return skalarni;
+        }
+        public static double Vektorski(Vektor a, Vektor b)  //vektorski proizvod dva vektora, vraca samo k
+        {
+            Tacka Ac = Vektor_Centriraj(a);
+            Tacka Bc = Vektor_Centriraj(b);
+            return Ac.x * Bc.y - Ac.y * Bc.x; 
+        }
+        public static double Ugao(Vektor a, Vektor b)  //vraca ugao izmedju dva vektora u stepenima
+        {
+            Tacka Ac = Vektor_Centriraj(a);
+            Tacka Bc = Vektor_Centriraj(b);
+            double ugaoA = Math.Atan2(Ac.y, Ac.x) * 180 / Math.PI;
+            double ugaoB = Math.Atan2(Bc.y, Bc.x) * 180 / Math.PI;
+            if (ugaoB - ugaoA < 0)
+            {
+                return ugaoB - ugaoA + 360;
+            } 
+            return ugaoB - ugaoA;
         }
     }
 }
