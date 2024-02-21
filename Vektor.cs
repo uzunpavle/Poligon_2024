@@ -48,5 +48,10 @@ namespace Poligon_2024
             } 
             return ugaoB - ugaoA;
         }
+        public static double Intenzitet(Vektor v)
+        {
+            Tacka a = Vektor_Centriraj(v);
+            return a.Get_r();
+        }
     }
 }

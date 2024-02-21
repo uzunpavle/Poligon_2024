@@ -9,8 +9,8 @@ namespace Poligon_2024
 {
     internal class Poligon
     {
-        int broj_temena;
-        Tacka[] temena;
+        public int broj_temena;
+        public Tacka[] temena;
         public Poligon()  //konstruktor gde se unose samo temena
         {
             temena = new Tacka[broj_temena];
