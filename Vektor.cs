@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization.Configuration;
 
 namespace Poligon_2024
 {
@@ -48,7 +49,7 @@ namespace Poligon_2024
             } 
             return ugaoB - ugaoA;
         }
-        public static double Intenzitet(Vektor v)
+        public static double Intenzitet(Vektor v)  //intenzitet vektora
         {
             Tacka a = Vektor_Centriraj(v);
             return a.Get_r();

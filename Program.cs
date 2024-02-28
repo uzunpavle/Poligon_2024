@@ -29,7 +29,7 @@ namespace Poligon_2024
             {
                 // kopiraj ovde Console.WriteLine iz grafova za opcije
                 akcija = Convert.ToInt32(Console.ReadLine());
-                if (akcija == 1)
+                if (akcija == 1)  //unosenje poligona sa tastature
                 {
                     Console.WriteLine("Koliko ima temena polinom?");
                     int br_temena = Convert.ToInt32(Console.ReadLine());
@@ -37,27 +37,42 @@ namespace Poligon_2024
                     for (int i = 0; i < br_temena; i++)
                     {
                         Console.WriteLine("Unesite x koordinatu temena");
-                        int x = Convert.ToInt32(Console.ReadLine());
+                        double x = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("Unesite y koordinatu temena");
-                        int y = Convert.ToInt32(Console.ReadLine());
-                        Tacka teme = new Tacka(x,y);
-                        poligon.temena[i] = teme;
+                        double y = Convert.ToDouble(Console.ReadLine());
+                        poligon.temena[i] = new Tacka(x, y);
                     }
                 }
-                if (akcija == 2) //obim poligona, zadatak sa casa, skloni visak koda kad budes pravio deo za obim
+                if (akcija == 2)  //cuvanje poligona u fajl
                 {
 
                 }
+                if (akcija == 3)  //ucitavanje poligona iz fajla
+                {
+
+                }
+                if (akcija == 4) //obim poligona, zadatak sa casa, skloni visak koda kad budes pravio deo za obim
+                {
+
+                }
+                if (akcija == 5)  //proverava da li je tacka u poligonu
+                {
+
+                }
+                if (akcija == 6)  
+                {
+
+                } //nalazi najmanji konveksan cetvorougao
             }
             
             Tacka A = new Tacka(2, -1);
             Tacka b = new Tacka(5.866, 6.5);
             Tacka c = new Tacka(2, 0);
             Tacka d = new Tacka(5, 6);
-            */
+
 
             /*****************************************************************************/
-
+            /*
             Console.WriteLine("Koliko ima temena polinom?");
             int br_temena = Convert.ToInt32(Console.ReadLine());
             Poligon poligon = new Poligon(br_temena);
@@ -76,6 +91,17 @@ namespace Poligon_2024
                 obim = obim + (Vektor.Intenzitet(vektor) / 2);
             }
             Console.WriteLine("Obim novog poligona je {0}", obim);
+            */
+            /**********************************************************************************************/
+
+            Poligon prvi = new Poligon(4);
+            prvi.temena[0] = new Tacka(1, 1);
+            prvi.temena[1] = new Tacka(3, 1);
+            prvi.temena[2] = new Tacka(2, 1);
+            prvi.temena[3] = new Tacka(2, 2);
+            Vektor AB = new Vektor(prvi.temena[0], prvi.temena[1]);
+            Vektor CD = new Vektor(prvi.temena[2], prvi.temena[3]);
+            Console.WriteLine(Funkcije.Presek(AB, CD));
         }
     }
 }
