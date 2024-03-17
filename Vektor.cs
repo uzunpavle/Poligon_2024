@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -53,6 +54,12 @@ namespace Poligon_2024
         {
             Tacka a = Vektor_Centriraj(v);
             return a.Get_r();
+        }
+        public double Duzina()
+        {
+            Tacka nova = Vektor_Centriraj(this);
+            double duzina = nova.Get_r();
+            return duzina;
         }
     }
 }

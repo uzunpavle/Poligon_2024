@@ -41,5 +41,15 @@ namespace Poligon_2024
                 return false;
             }
         }
+        public double Obim()
+        {
+            double obim = 0;
+            for (int i = 0; i < broj_temena; i++)
+            {
+                Vektor novi = new Vektor(temena[i], temena[(i + 1) % broj_temena]);
+                obim += novi.Duzina();
+            }
+            return obim;
+        }
     }
 }
