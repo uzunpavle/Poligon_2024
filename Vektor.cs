@@ -61,5 +61,12 @@ namespace Poligon_2024
             double duzina = nova.Get_r();
             return duzina;
         }
+        public static bool Presek(Vektor AB, Tacka T)
+        {
+            double AT = Math.Abs(T.x - AB.pocetak.x);
+            double TB = Math.Abs(T.x - AB.kraj.x);
+            if (T.y == AB.kraj.y && AT + TB == Intenzitet(AB)) return true;
+            else return false;
+        }
     }
 }

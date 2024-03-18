@@ -38,5 +38,15 @@ namespace Poligon_2024
                 return false;
             }
         }
+        public static bool Presek1(Vektor AB, Vektor CD)
+        {   
+            bool presek;
+            if (Presek(AB, CD)) presek = true;
+            else return false;
+            if (Math.Max(AB.pocetak.x, AB.kraj.x) >= Math.Min(CD.pocetak.x, CD.kraj.x) && Math.Max(AB.pocetak.y, AB.kraj.y) >= Math.Min(CD.pocetak.y, CD.kraj.y) &&
+                Math.Max(CD.pocetak.x, CD.kraj.x) >= Math.Min(AB.pocetak.x, AB.kraj.x) && Math.Max(CD.pocetak.y, CD.kraj.y) >= Math.Min(AB.pocetak.y, AB.kraj.y)) presek = true;
+            else presek = false;
+            return presek;
+        }
     }
 }

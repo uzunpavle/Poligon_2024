@@ -20,5 +20,10 @@ namespace Poligon_2024
             double r = Math.Sqrt(x * x + y * y);
             return r;
         }
+        public static bool Jednake(Tacka A, Tacka B)
+        {
+            if ((A.x == B.x) && (A.y == B.y)) return true;
+            else return false;
+        }
     }
 }

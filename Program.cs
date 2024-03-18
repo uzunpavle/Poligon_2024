@@ -239,37 +239,40 @@ namespace Poligon_2024
                     citac.Close();
                 }
                 if (akcija == 4)
-                {
-
+                {                   
+                    if (pol.Prost()) Console.WriteLine("Jeste prost.");
+                    else Console.WriteLine("Nije prost.");
                 }
                 if (akcija == 5)
                 {
-
+                    if (pol.Prost()) Console.WriteLine("Povrsina: " + pol.Povrsina());
+                    else Console.WriteLine("Poligon nije prost");
                 }
                 if (akcija == 6)
                 {
-                    double obim = pol.Obim();
-                    Console.WriteLine("Obim poligona je " + obim);
+                    if (pol.Prost()) Console.WriteLine("Obim: " + pol.Obim());
+                    else Console.WriteLine("Poligon nije prost");
                 }
                 if (akcija == 7)
                 {
-                    bool konveksan = pol.Konveksan();
-                    if (konveksan == true)
+                    if (pol.Prost())
                     {
-                        Console.WriteLine("Jeste konveksan");
+                        if (pol.Konveksan()) Console.WriteLine("Poligon je konveksan");
+                        else Console.WriteLine("Poligon nije konveksan");
                     }
-                    else
-                    {
-                        Console.WriteLine("Nije konveksan");
-                    }
+                    else Console.WriteLine("Poligon nije prost");
                 }
                 if (akcija == 8)
                 {
-
+                    Console.WriteLine("Unesite tacku koju zelite da proverite.");
+                    string[] pom = Console.ReadLine().Split();
+                    Tacka T = new Tacka(Convert.ToDouble(pom[0]), Convert.ToDouble(pom[1]));
+                    if (pol.Pripada_Poligonu(T)) Console.WriteLine("Tacka se nalazi u poligonu.");
+                    else Console.WriteLine("Tacka se ne nalazi u poligonu.");
                 }
                 if (akcija == 9)
                 {
-
+                    pol.KonveksniOmotac();
                 }
             }
         }
